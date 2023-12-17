@@ -17,7 +17,7 @@ class CursoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nombre_materia' =>fake()->subject()
         ];
     }
 }

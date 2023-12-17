@@ -17,7 +17,12 @@ class AlumnoFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+
+            'nombre'   => fake()->name(),
+            'apellido' => fake()->lastName(),
+            'tel'      => fake()->phoneNumber()
+
+
         ];
     }
 }
