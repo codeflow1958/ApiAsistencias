@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Docente;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,8 @@ class CursoFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre_materia' =>fake()->subject()
+            'nombre_materia' => fake()->country(),
+            'docente_id' => Docente::all()->random()
         ];
     }
 }
