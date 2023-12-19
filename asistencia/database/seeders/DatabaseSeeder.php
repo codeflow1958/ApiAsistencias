@@ -12,11 +12,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $docenteSeeder = new DocenteSeeder();
-        $docenteSeeder->run();
-        $alumnoSeeder = new AlumnoSeeder();
-        $alumnoSeeder->run();
-        //$cursoSeeder = new CursoSeeder();
-        //$cursoSeeder->run();
+        //$docenteSeeder = new DocenteSeeder();
+        //$docenteSeeder->run();
+        //$alumnoSeeder = new AlumnoSeeder();
+        //$alumnoSeeder->run();
+        $asignacionSeeder = new AsignacionSeeder();
+        $asignacionSeeder->run();
     }
 }

@@ -18,8 +18,8 @@ class CursoFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre_materia' => fake()->country(),
-            'docente_id' => Docente::all()->random()
+            'nombre_materia' => fake()->colorName(),
+            'docente_id' => Docente::all()->random(),
         ];
     }
 }

@@ -12,7 +12,7 @@ class DocenteController extends Controller
      */
     public function index()
     {
-        //
+        return Docente::all();
     }
 
     /**
