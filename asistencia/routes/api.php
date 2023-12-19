@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AlumnoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -17,3 +18,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/alumno', [AlumnoController::class, 'index']);
+Route::get('/alumno/{id}', [AlumnoController::class, 'show']);
+Route::post('/alumno/', [AlumnoController::class, 'store']);
+Route::put('/alumno/{id}', [AlumnoController::class, 'update']);
+Route::delete('/alumno/{id}', [AlumnoController::class, 'destroy']);

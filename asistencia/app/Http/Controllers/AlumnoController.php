@@ -28,15 +28,29 @@ class AlumnoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $alumno = new Alumno();
+
+        if ($alumno != null) {
+            $alumno->nombre = $request->nombre;
+            $alumno->apellido = $request->apellido;
+            $alumno->tel = $request->tel;
+            $alumno->save();
+            return "el alumno se guardo correctamente";
+        }
+
+        return "no existe el alumno";
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Alumno $alumno)
+    public function show($id)
     {
-        //
+        if (Alumno::find($id) != null) {
+            return Alumno::find($id);
+        }
+
+        return "no existe el alumno";
     }
 
     /**
@@ -50,16 +64,28 @@ class AlumnoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Alumno $alumno)
+    public function update(Request $request, $id)
     {
-        //
+        $alumno = Alumno::find($id);
+
+        if ($alumno != null) {
+            $alumno->nombre = $request->nombre;
+            $alumno->apellido = $request->apellido;
+            $alumno->tel = $request->tel;
+            $alumno->save();
+            return "el alumno se actualizo correctamente";
+        }
+
+        return "no existe el alumno ";
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Alumno $alumno)
+    public function destroy($id)
     {
-        //
+        $alumno = Alumno::find($id);
+        $alumno->delete();
+        return "el alumno fue eliminado";
     }
 }
